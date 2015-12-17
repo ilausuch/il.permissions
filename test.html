@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="bg">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<title>test il.permissions</title>
+		
+		<script type="text/javascript" src="il.permissions.js"></script>
+		
+		<script>
+			ps=new ilPermissions(["app.s1","app.s2","app.s2.m1#edit","app.s3#edit","app.s3.m1"]);
+			
+			test=[
+				"app",
+				"app.s1",
+				"app.s1#edit",
+				"app.s1.m1",
+				"app.s2",
+				"app.s2#edit",
+				"app.s2.m1",
+				"app.s2.m1#edit",
+				"app.s3",
+				"app.s3#edit",
+				"app.s3.m1",
+				"app.s3.m1#edit"
+			];
+			
+			test.forEach(function(t){
+				if (ps.check(t))
+					console.debug("YES",t);
+				else
+					console.debug("NO",t);	
+			});
+			
+		</script>
+	</head>
+	<body>
+			See console
+	</body>
+</html>
